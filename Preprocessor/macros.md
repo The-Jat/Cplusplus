@@ -1,5 +1,7 @@
 ## Macro
 
+> A macro is a fragment of code which has been given a name. Whenever the name is used, it is replaced by the contents of the macro. There are two kinds of macros.
+
 The macro in C language is known as the piece of code which can be replaced by the macro value. The macro is defined with the help of #define preprocessor directive and the macro doesn’t end with a semicolon(;). Macro is just a name given to certain values or expressions it doesn't point to any memory location.
 
 Whenever the compiler encounters the macro, it replaces the macro name with the macro value. Two macros could not have the same name.
