@@ -55,3 +55,69 @@ int table[TABLE_SIZE];
 ```
 
 In this case, if when arriving at this piece of code, the TABLE_SIZE macro has not been defined yet, it would be defined to a value of 100. If it already existed it would keep its previous value since the #define directive would not be executed.
+
+* The #if, #else and #elif (i.e., "else if") directives serve to specify some condition to be met in order for the portion of code they surround to be compiled. The condition that follows #if or #elif can only evaluate constant expressions, including macro expressions. For example:
+
+```
+#if TABLE_SIZE>200
+#undef TABLE_SIZE
+#define TABLE_SIZE 200
+ 
+#elif TABLE_SIZE<50
+#undef TABLE_SIZE
+#define TABLE_SIZE 50
+ 
+#else
+#undef TABLE_SIZE
+#define TABLE_SIZE 100
+#endif
+ 
+int table[TABLE_SIZE];
+```
+
+Notice how the entire structure of #if, #elif and #else chained directives ends with #endif.
+
+The behavior of #ifdef and #ifndef can also be achieved by using the special operators defined and !defined respectively in any #if or #elif directive:
+
+1
+2
+3
+4
+5
+6
+7
+
+	
+
+#if defined ARRAY_SIZE
+#define TABLE_SIZE ARRAY_SIZE
+#elif !defined BUFFER_SIZE
+#define TABLE_SIZE 128
+#else
+#define TABLE_SIZE BUFFER_SIZE
+#endif 
+
+> #undef Directive
+To undefine an existing macro, we use the #undef directive. The #undef directive is often used in combination with the #define directive to specify a section in a source code where a macro holds a specific meaning.
+
+
+```
+#include<iostream>
+#define PI 3.14
+
+using namespace std;
+
+int main()
+{
+	#undef PI
+	#ifdef PI
+    		cout<<"PI is defined.";
+	#else
+		cout<<"PI is undefined";
+	#endif
+
+	return 0;
+}
+
+```
+
