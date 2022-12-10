@@ -9,5 +9,26 @@ The syntax of the macro is as shown in the following code. Here, we will have th
 #define PI 3.14
 ```
 #define = Preprocessor Directive
+
 PI = Macro Name
+
 3.14 = Macro Value
+
+```
+#include<stdio.h>
+
+// This is macro definition
+#define PI 3.14
+
+void main()
+{
+    // declaration and initialization of radius
+    int radius = 5;
+    // declaration and calculating the area
+    float area = PI * (radius*radius); 
+    
+    // Printing the area of circle
+    printf("Area of circle is %f", area);
+}
+
+```
