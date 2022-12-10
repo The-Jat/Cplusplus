@@ -32,3 +32,15 @@ void main()
 }
 
 ```
+
+> Predefined Macros
+
+* Here are some predefined macros in C programming.
+
+|Macro | Value|
+|---|---|
+|__DATE__	|A string containing the current date.|
+|__FILE__	|A string containing the file name.|
+|__LINE__	|An integer representing the current line number.|
+|__STDC__	|If follows ANSI standard C, then the value is a nonzero integer.|
+|__TIME__	|A string containing the current time.|
