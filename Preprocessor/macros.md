@@ -80,6 +80,7 @@ int x[] = { NUMBERS };
      → int x[] = { 1, 2, 3 };
 ```
 
+
 >2. Function-like Macro:
 
 These macros are the same as a function call. It replaces the entire code instead of a function name. Pair of parentheses immediately after the macro name is necessary. If we put a space between the macro name and the parentheses in the macro definition, then the macro will not work. 
@@ -106,4 +107,5 @@ int main()
  
     return 0;
 }
+Output => Minimum value between 18 and 76 is 18
 ```
