@@ -68,3 +68,14 @@ An object-like macro is a simple identifier which will be replaced by a code fra
 You create macros with the ‘#define’ directive. ‘#define’ is followed by the name of the macro and then the token sequence it should be an abbreviation for, which is variously referred to as the macro’s body, expansion or replacement list. For example,
 
 #define BUFFER_SIZE 1024
+
+* By convention, macro names are written in uppercase. Programs are easier to read when it is possible to tell at a glance which names are macros.
+
+* The macro’s body ends at the end of the ‘#define’ line. You may continue the definition onto multiple lines, if necessary, using backslash-newline. When the macro is expanded, however, it will all come out on one line. For example,
+```
+#define NUMBERS 1, \
+                2, \
+                3
+int x[] = { NUMBERS };
+     → int x[] = { 1, 2, 3 };
+```
