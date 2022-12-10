@@ -44,3 +44,14 @@ void main()
 |__LINE__	|An integer representing the current line number.|
 |__STDC__	|If follows ANSI standard C, then the value is a nonzero integer.|
 |__TIME__	|A string containing the current time.|
+
+
+example :-
+```
+#include <stdio.h>
+int main()
+{
+   printf("Current time: %s",__TIME__);   
+}
+
+```
