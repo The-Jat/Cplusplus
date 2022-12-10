@@ -55,3 +55,4 @@ int main()
 }
 
 ```
+Output => Current time: 19:54:39
