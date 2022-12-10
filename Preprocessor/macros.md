@@ -111,3 +111,34 @@ Output => Minimum value between 18 and 76 is 18
 ```
 
 * When we use macro functions, however, unlike regular functions, they do not perform any kind of type checking. Because of this drawbacks, inline functions are usually preferable to macro functions. But because macros directly substitute their code, they reduce the overhead of a function call.
+
+
+>3. Stringizing
+
+Sometimes you may want to convert a macro argument into a string constant. Parameters are not replaced inside string constants, but you can use the ‘#’ preprocessing operator instead. When a macro parameter is used with a leading ‘#’, the preprocessor replaces it with the literal text of the actual argument, converted to a string constant. Unlike normal parameter replacement, the argument is not macro-expanded first. This is called stringizing.
+
+* The number-sign or "stringizing" operator (#) converts macro parameters to string literals without expanding the parameter definition. 
+
+
+```
+#include <stdio.h>
+#define PRINT_MSG( x ) printf(#x "\n")
+int main()
+{
+    PRINT_MSG(LOVE TO READ ATICLEWORLD);
+    PRINT_MSG(12456);
+    return 0;
+}
+
+#include <stdio.h>
+// Stringizing operator #
+// it converts the input into a String literal
+#define STRINGIZING_OPERATOR(input) #input
+int main()
+{
+    
+    printf(STRINGIZING_OPERATOR(Coding Ninjas));
+    return 0;
+}
+
+```
