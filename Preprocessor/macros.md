@@ -109,3 +109,5 @@ int main()
 }
 Output => Minimum value between 18 and 76 is 18
 ```
+
+* When we use macro functions, however, unlike regular functions, they do not perform any kind of type checking. Because of this drawbacks, inline functions are usually preferable to macro functions. But because macros directly substitute their code, they reduce the overhead of a function call.
