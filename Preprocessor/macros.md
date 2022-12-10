@@ -79,3 +79,31 @@ You create macros with the ‘#define’ directive. ‘#define’ is followed by
 int x[] = { NUMBERS };
      → int x[] = { 1, 2, 3 };
 ```
+
+>2. Function-like Macro:
+
+These macros are the same as a function call. It replaces the entire code instead of a function name. Pair of parentheses immediately after the macro name is necessary. If we put a space between the macro name and the parentheses in the macro definition, then the macro will not work. 
+A function-like macro is only lengthened if and only if its name appears with a pair of parentheses after it. If we don’t do this, the function pointer will get the address of the real function and lead to a syntax error.
+Below is the illustration of function-like macros:
+
+```
+#include <stdio.h>
+ 
+// Function-like Macro definition
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+ 
+// Driver Code
+int main()
+{
+ 
+    // Given two number a and b
+    int a = 18;
+    int b = 76;
+ 
+    printf("Minimum value between"
+           " %d and %d is %d\n",
+           a, b, min(a, b));
+ 
+    return 0;
+}
+```
