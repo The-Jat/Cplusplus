@@ -113,7 +113,7 @@ Output => Minimum value between 18 and 76 is 18
 * When we use macro functions, however, unlike regular functions, they do not perform any kind of type checking. Because of this drawbacks, inline functions are usually preferable to macro functions. But because macros directly substitute their code, they reduce the overhead of a function call.
 
 
->3. Stringizing
+>. Stringizing
 
 Sometimes you may want to convert a macro argument into a string constant. Parameters are not replaced inside string constants, but you can use the ‘#’ preprocessing operator instead. When a macro parameter is used with a leading ‘#’, the preprocessor replaces it with the literal text of the actual argument, converted to a string constant. Unlike normal parameter replacement, the argument is not macro-expanded first. This is called stringizing.
 
@@ -141,4 +141,38 @@ int main()
     return 0;
 }
 
+```
+
+>. Token Pasting Operator (##)
+
+The Token Pasting operator is also a preprocessor operator. It instructs the compiler to add or concatenate two tokens into a single string. This operator is used in the macro definition.
+
+When expanding macros, it is frequently useful to combine two tokens into one. This is known as token concatenation or token pasting. Token pasting is performed by the '##' pre-processing operator. When a macro is expanded, the two tokens on either side of each '##' operator are combined to form a single token that replaces the '##' and the two original tokens in the macro expansion.
+
+The token pasting (##) operator simply removes any surrounding white space and concatenates (joins together) the non-whitespace characters.
+
+#### Syntax
+The syntax of the token-pasting operator (##) is as follows:
+
+```
+#define MACRO_NAME(param1, param2) param1##param2
+#define: It is a preprocessor directive in C.
+MACRO_NAME: It represents the macro that has to be replaced by its value throughout the program.
+Param1 / param2: The parameters that are passed to the macros for concatenation.
+##: This is the token-pasting operator.
+```
+
+```
+#include <stdio.h>
+
+#define TOKEN_PASTING(param1, param2) param1##param2
+int main()
+{
+    
+    printf("The concatenated result is: %d",TOKEN_PASTING(1234,56789));
+    return 0;
+}
+Output: 
+
+The concatenated result is: 123456789
 ```
