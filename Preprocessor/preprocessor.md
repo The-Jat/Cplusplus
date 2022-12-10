@@ -20,4 +20,9 @@ For Example : The pre-processor can import the contents of other program files i
 2. If available, it will perform the action event of pre-processor and the compiler will generate the object code. The code will then be executed by the linker.
 3. In case no preprocessor directives are available, it will go to the compiler. The compiler will then generate the object code followed by execution of the code by linker.
 
+  > There are 4 Main Types of Preprocessor Directives:
+1. Macros
+2. File Inclusion
+3. Conditional Compilation
+4. Other directives
 
