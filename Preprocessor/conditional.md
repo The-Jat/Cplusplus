@@ -108,3 +108,53 @@ int main()
 }
 
 ```
+
+> #if, #else and #elif
+
+The #if directive has the following syntax:
+
+#if constant-expression newline
+This directive checks whether the constant-expression is true (nonzero).
+
+These directives works together and control compilation of portions of the program using some conditions. If the condition with the #if directive evaluates to a non zero value, then the group of line immediately after the #if directive will be executed otherwise if the condition with the #elif directive evaluates to a non zero value, then the group of line immediately after the #elif directive will be executed else the lines after #else directive will be executed.
+
+Syntax:
+```
+#if macro_condition
+   statements
+#elif macro_condition
+   statements
+#else
+   statements
+#endif
+```
+* The #if directive takes a numerical argument that evaluates to true if it's non-zero. If its argument is false, then code until the closing #else, #elif, of #endif will be excluded.
+
+example = 
+```
+#include<iostream>
+ 
+#define var 7
+  
+#if var > 200
+  
+#elif gfg < 50
+   
+#else
+
+#endif
+ 
+```
+
+### Commenting out Code
+Conditional compilation is a particularly useful way to comment out a block of code that contains multi-line comments (which cannot be nested).
+```
+#if 0
+/* comment ...
+*/
+ // never executed.
+// code
+ 
+/* comment */
+#endif
+```
