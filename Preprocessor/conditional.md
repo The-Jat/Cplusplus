@@ -128,7 +128,8 @@ Syntax:
    statements
 #endif
 ```
-* The #if directive takes a numerical argument that evaluates to true if it's non-zero. If its argument is false, then code until the closing #else, #elif, of #endif will be excluded.
+* The #if directive takes a numerical argument that evaluates to true if it's non-zero. If its argument is false, then code until the closing #else, #elif, of #endif will be excluded. 
+* 0 represent false while non zero represent true
 
 example = 
 ```
